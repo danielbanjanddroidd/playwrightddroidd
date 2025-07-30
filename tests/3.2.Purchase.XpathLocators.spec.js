@@ -15,7 +15,8 @@ test('End to End Purchase flow with the XPath locators', async ({ page }) => {
 await page.goto(URLs.pageLinkCategoryAllProducts);
 await page.waitForTimeout(5000);
 const consentPopupWindow = new consentPopup(page);
-await consentPopupWindow.clickManageOptions();
+await consentPopupWindow.handlePopUpWithOptions();
+
 const plpPage = new pagePLP(page);
 //Click on the Sorting option of the Filter tab
 const buttonSorting = page.locator(plpPage.buttonSorting);
@@ -42,24 +43,26 @@ await buttonCheckout.waitFor();
 await buttonCheckout.click();
 //Checkout step 1
 const checkoutPage = new pageCheckout(page);
+await page.waitForTimeout(5000);
 const fieldEmail = page.locator(checkoutPage.fieldEmail);
-await fieldEmail.fill(testData.checkoutCustomerDetails.email);
+await fieldEmail.waitFor();
+await fieldEmail.fill(testData.CustomerDetails.email);
 const fieldFirstName = page.locator(checkoutPage.fieldFirstName);
-await fieldFirstName.fill(testData.checkoutCustomerDetails.firstName);
+await fieldFirstName.fill(testData.CustomerDetails.firstName);
 const fieldLastName = page.locator(checkoutPage.fieldLastName);
-await fieldLastName.fill(testData.checkoutCustomerDetails.lastName);
+await fieldLastName.fill(testData.CustomerDetails.lastName);
 const fieldPhone = page.locator(checkoutPage.fieldPhone);
-await fieldPhone.fill(testData.checkoutCustomerDetails.phone);
+await fieldPhone.fill(testData.CustomerDetails.phone);
 const dropdownCountryRegion = page.locator(checkoutPage.dropdownCountryRegion);
 await dropdownCountryRegion.click();
 const dropdownOption = page.locator(checkoutPage.dropdownOption);
 await dropdownOption.click();
 const fieldAddress = page.locator(checkoutPage.fieldAddress);
-await fieldAddress.fill(testData.checkoutDeliveryDetails.address);
+await fieldAddress.fill(testData.DeliveryDetails.address);
 const fieldCity = page.locator(checkoutPage.fieldCity);
-await fieldCity.fill(testData.checkoutDeliveryDetails.city);
+await fieldCity.fill(testData.DeliveryDetails.city);
 const fieldZipCode = page.locator(checkoutPage.fieldZipCode);
-await fieldZipCode.fill(testData.checkoutDeliveryDetails.zipCode);
+await fieldZipCode.fill(testData.DeliveryDetails.zipCode);
 const buttonContinueCheckout1 = page.locator(checkoutPage.buttonContinueCheckout1);
 await buttonContinueCheckout1.click();
 //Checkout step 2

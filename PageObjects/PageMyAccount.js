@@ -7,7 +7,9 @@ this.buttonMyAccount = "xpath=//div[@data-testid='handle-button']"
 this.buttonMyAddress = "xpath=//span[text()='My Addresses']";
 this.iframeMyAddress = "xpath=//iframe[@title='My Addresses']";
 this.buttonAddNewAddress = "xpath=//div[@class='_10o0_ _26mkp hidden-mobile' and @data-hook='add-address-button']//button[@data-hook='button' and text()='Add New Address']"
+this.buttonConfirmRemove = "xpath=//*[@data-hook='remove-confirmation-accept-button']//button[@data-hook='button' and text()='Yes']"
 this.iframeNewAddress = "//iframe[contains(@name, 'tpapopup-')]";
+this.buttonRemoveAddress = "xpath=//button[@data-hook='remove-button']"
 this.fieldFirstName = "xpath=//input[@name='firstName']";
 this.fieldLastName = "xpath=//input[@name='lastName']";
 this.fieldCompanyName = "xpath=//input[@name='company']";

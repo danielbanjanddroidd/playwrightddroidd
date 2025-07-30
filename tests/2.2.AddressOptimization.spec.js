@@ -12,11 +12,11 @@ import { pageMyAccount } from '../PageObjects/PageMyAccount';
 // that matches iframes whose names start with 'tpapopup-'.
 // The Account and My Address locator have also been adjusted to reflect the current structure
 
-test ('Add a new Address in My Account', async ({ page }) => {
+test.only ('Add a new Address in My Account', async ({ page }) => {
     await page.goto(URLs.pageLinkHomePage)
     await page.waitForTimeout(5000);
     const consentPopupWindow = new consentPopup(page);
-    await consentPopupWindow.clickButtonConsent();
+    await consentPopupWindow.handlePopUpWithConsent();
     const loginPage = new pageLogin(page);
     const buttonLoginHeader = page.locator(loginPage.buttonLoginHeader);
     await buttonLoginHeader.click();
@@ -74,6 +74,13 @@ test ('Add a new Address in My Account', async ({ page }) => {
     Ukraine
     123-456-7890
     `);
-
-
+    const buttonRemoveAddress = page
+    .frameLocator(myAccountPage.iframeMyAddress)
+    .locator(myAccountPage.buttonRemoveAddress);
+    await buttonRemoveAddress.click();
+    const buttonConfirmRemove = page
+    .frameLocator(myAccountPage.iframeMyAddress)
+    .locator(myAccountPage.buttonConfirmRemove);
+    await buttonConfirmRemove.waitFor();
+    await buttonConfirmRemove.click();
 }); 

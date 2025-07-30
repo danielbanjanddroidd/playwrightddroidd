@@ -22,5 +22,23 @@ await buttonManageOptions.click();
 const buttonAcceptAll = this.page.locator(this.buttonAcceptAll);
 await buttonAcceptAll.click();
 }
+
+async isVisible(){
+    return await this.page.locator(this.consentPopup).isVisible();
 }
+
+async handlePopUpWithConsent() {
+    
+    const consentVisible = await this.isVisible();
+    if (consentVisible) { await this.clickButtonConsent(); }
+}
+
+async handlePopUpWithOptions() {
+    
+    const consentVisible = await this.isVisible();
+    if (consentVisible) { await this.clickManageOptions(); }
+}
+
+}
+
 module.exports = { consentPopup };

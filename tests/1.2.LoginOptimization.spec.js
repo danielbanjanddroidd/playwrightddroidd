@@ -12,7 +12,7 @@ test('Login with valid credentials', async ({ page }) => {
     await page.goto(URLs.pageLinkHomePage)
     await page.waitForTimeout(5000);
     const consentPopupWindow = new consentPopup(page);
-    await consentPopupWindow.clickButtonConsent();
+    await consentPopupWindow.handlePopUpWithConsent();
     const loginPage = new pageLogin(page);
     const buttonLoginHeader = page.locator(loginPage.buttonLoginHeader);
     await buttonLoginHeader.click();
@@ -31,8 +31,8 @@ test('Login with valid credentials', async ({ page }) => {
 test('Login with empty fields of the Login form', async ({ page }) => {
     await page.goto(URLs.pageLinkHomePage);
     await page.waitForTimeout(5000);
-    //const consentPopupWindow = new consentPopup(page);
-    //await consentPopupWindow.clickButtonConsent();
+    const consentPopupWindow = new consentPopup(page);
+    await consentPopupWindow.handlePopUpWithConsent();
     const loginPage = new pageLogin(page);
     const buttonLoginHeader = page.locator(loginPage.buttonLoginHeader);
     await buttonLoginHeader.click();
@@ -50,7 +50,7 @@ test('Login with an empty Email field of the Login form', async ({ page }) => {
     await page.goto(URLs.pageLinkHomePage);
     await page.waitForTimeout(5000);
     const consentPopupWindow = new consentPopup(page);
-    await consentPopupWindow.clickButtonConsent();
+    await consentPopupWindow.handlePopUpWithConsent();
     const loginPage = new pageLogin(page);
     const buttonLoginHeader = page.locator(loginPage.buttonLoginHeader);
     await buttonLoginHeader.click();
@@ -69,7 +69,7 @@ test('Login with an empty Password field of the Login form', async ({ page }) =>
     await page.goto(URLs.pageLinkHomePage);
     await page.waitForTimeout(5000);
     const consentPopupWindow = new consentPopup(page);
-    await consentPopupWindow.clickButtonConsent();
+    await consentPopupWindow.handlePopUpWithConsent();
     const loginPage = new pageLogin(page);
     const buttonLoginHeader = page.locator(loginPage.buttonLoginHeader);
     await buttonLoginHeader.click();
@@ -88,7 +88,7 @@ test('Login with the invalid format of the Email', async ({ page }) => {
     await page.goto(URLs.pageLinkHomePage);
     await page.waitForTimeout(5000);
     const consentPopupWindow = new consentPopup(page);
-    await consentPopupWindow.clickButtonConsent();
+    await consentPopupWindow.handlePopUpWithConsent();
     const loginPage = new pageLogin(page);
     const buttonLoginHeader = page.locator(loginPage.buttonLoginHeader);
     await buttonLoginHeader.click();
@@ -109,7 +109,7 @@ test('Login with the invalid Password', async ({ page }) => {
     await page.goto(URLs.pageLinkHomePage);
     await page.waitForTimeout(5000);
     const consentPopupWindow = new consentPopup(page);
-    await consentPopupWindow.clickButtonConsent();
+    await consentPopupWindow.handlePopUpWithConsent();
     const loginPage = new pageLogin(page);
     const buttonLoginHeader = page.locator(loginPage.buttonLoginHeader);
     await buttonLoginHeader.click();
@@ -130,7 +130,7 @@ test('Login with non-existent user email', async ({ page }) => {
     await page.goto(URLs.pageLinkHomePage);
     await page.waitForTimeout(5000);
     const consentPopupWindow = new consentPopup(page);
-    await consentPopupWindow.clickButtonConsent();
+    await consentPopupWindow.handlePopUpWithConsent();
     const loginPage = new pageLogin(page);
     const buttonLoginHeader = page.locator(loginPage.buttonLoginHeader);
     await buttonLoginHeader.click();
