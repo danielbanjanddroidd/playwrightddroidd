@@ -31,7 +31,7 @@ test('Login with empty fields of the Login form', async ({ page }) => {
 await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
 //Click on the Consent button on Cookie pop-up
-await page.getByLabel('Consent', { exact: true }).click();
+//await page.getByLabel('Consent', { exact: true }).click();
 //Click on the Login button on the header
 await page.getByRole('button', { name: 'Log In' }).click();
 //Click on the Login button on the Signup page
