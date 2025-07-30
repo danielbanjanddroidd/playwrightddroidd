@@ -4,7 +4,7 @@ import { URLs } from '../Common/URLs';
 // Please note that the locator for the account button in the video differs from the current one,
 // as Wix has since updated it. We have made the necessary changes in the file accordingly.
 
-test.only('Login with valid credentials', async ({ page }) => {
+test('Login with valid credentials', async ({ page }) => {
 // Navigate to the Testing101 website
 await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);

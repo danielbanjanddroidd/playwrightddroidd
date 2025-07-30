@@ -1,8 +1,8 @@
 import {test,expect} from '@playwright/test';
-import { URLs } from '../Common/Urls';
+import { URLs } from '../Common/URLs';
 import { consentPopup } from '../Common/ConsentPopup';
 import { pageLogin } from '../PageObjects/PageLogin';
-import { pageSignUp } from '../PageObjects/PageSignup';
+import { pageSignUp } from '../PageObjects/PageSignUp';
 import { testData } from '../Common/TestData';
 
 // Please note that the locator for the account button in the video differs from the current one,
