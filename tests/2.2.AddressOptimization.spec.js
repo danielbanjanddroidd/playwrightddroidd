@@ -12,7 +12,7 @@ import { pageMyAccount } from '../PageObjects/PageMyAccount';
 // that matches iframes whose names start with 'tpapopup-'.
 // The Account and My Address locator have also been adjusted to reflect the current structure
 
-test.only ('Add a new Address in My Account', async ({ page }) => {
+test ('Add a new Address in My Account', async ({ page }) => {
     await page.goto(URLs.pageLinkHomePage)
     await page.waitForTimeout(5000);
     const consentPopupWindow = new consentPopup(page);
