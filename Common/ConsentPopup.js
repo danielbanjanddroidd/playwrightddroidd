@@ -23,4 +23,4 @@ const buttonAcceptAll = this.page.locator(this.buttonAcceptAll);
 await buttonAcceptAll.click();
 }
 }
-export {consentPopup};
+module.exports = { consentPopup };

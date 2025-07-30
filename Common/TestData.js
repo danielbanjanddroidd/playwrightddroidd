@@ -1,4 +1,4 @@
-export class testData {
+class testData {
 //Define date here 
 static CustomerDetails =
 {
@@ -25,5 +25,7 @@ emailUnexistent: 'andriitest12345@gmail.com'
 }
 
 }
+
+module.exports = { testData };
 
 
