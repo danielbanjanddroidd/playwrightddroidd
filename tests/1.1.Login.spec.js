@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { URLs } = require('../Common/Urls');
+import { URLs } from '../Common/Urls';
 
 // Please note that the locator for the account button in the video differs from the current one,
 // as Wix has since updated it. We have made the necessary changes in the file accordingly.

@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { URLs } = require('../Common/Urls');
+import { URLs } from '../Common/Urls';
 
 test('XPath Playwright Locators', async ({ page }) => {
 // Navigate to the Testing101 website

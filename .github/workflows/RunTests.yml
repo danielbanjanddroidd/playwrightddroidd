@@ -1,6 +1,11 @@
 name: Playwright Tests
 on:
   workflow_dispatch:
+  inputs:
+      name:
+        type: string
+        description: Test run command
+        default: 'npx playwright test'
 jobs:
   Setup_Run_Tests:
     timeout-minutes: 60

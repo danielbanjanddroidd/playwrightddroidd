@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { URLs } = require('../Common/Urls');
+import { URLs } from '../Common/Urls';
 
 // Please note: Some locators shown in the video are now outdated due to Wix updates.
 // Specifically, the iframe and account button locators have changed.
