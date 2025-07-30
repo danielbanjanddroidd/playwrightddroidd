@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import { URLs } from '../Common/Urls';
+import { URLs } from '../Common/URLs';
 import { consentPopup } from '../Common/ConsentPopup';
 import { pageLogin } from '../PageObjects/PageLogin';
 import { pageSignUp } from '../PageObjects/PageSignup';
