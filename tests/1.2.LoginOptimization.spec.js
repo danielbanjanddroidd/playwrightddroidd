@@ -31,8 +31,8 @@ test('Login with valid credentials', async ({ page }) => {
 test('Login with empty fields of the Login form', async ({ page }) => {
     await page.goto(URLs.pageLinkHomePage);
     await page.waitForTimeout(5000);
-    const consentPopupWindow = new consentPopup(page);
-    await consentPopupWindow.clickButtonConsent();
+    //const consentPopupWindow = new consentPopup(page);
+    //await consentPopupWindow.clickButtonConsent();
     const loginPage = new pageLogin(page);
     const buttonLoginHeader = page.locator(loginPage.buttonLoginHeader);
     await buttonLoginHeader.click();
